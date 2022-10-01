@@ -1,19 +1,20 @@
 window.onload = function () {
 
-  async function sendRequest(params = {}) {
-    const query = Object.keys(params)
-      .map(key => `${key}=${params[key]}`).join("&");
-    const responce = await fetch(`api/?${query}`);
-    return await responce.text();
+  const server = new Server();
+
+  async function sendLoginHandler() {
+    const login = document.getElementById('login').value;
+    const password = document.getElementById('password').value;
+    const data = await server.login({ method: 'login', login, password});
+    
+
+    console.log(data);
   }
 
-  async function send() {
-    const number = document.getElementById("number").value;
-    const pow = document.getElementById("pow").value;
-    const answer = await sendRequest({ number, pow })
-
-    console.log(answer);
+  function sendConvertHandler() {
+    Server.convert(1, 'a', 'b');
   }
 
-  document.getElementById("send").addEventListener("click", send);
+  document.getElementById('sendLogin').addEventListener('click', sendLoginHandler);
+  document.getElementById('sendConvert').addEventListener('click', sendConvertHandler);
 };

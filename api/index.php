@@ -1,10 +1,33 @@
 <?php
-require("RomanNumbers.php"); //класс подключен. надо реализовать логику, но хз как поключить php файл к html. или как оно вообще?
+error.reporting(-1);
+require("application/Application.php");
+require("convert/Convert.php");
 
 $roman = new RomanNumbers();
 
-$number = $_GET["number"];
-$pow = $_GET["pow"];
+$number = $_GET['number'];
+$pow = $_GET['pow'];
 
-print_r($roman);
-echo pow($number, $pow);
+function router($params) {
+    $method = $params['method'];
+    if ($method) {
+        $app = new Application();
+        switch ($method) {
+            case 'login':
+                return $app->login($params);    
+        }
+    }
+    else false;
+}
+
+function answer($params) {
+    if ($data) {
+        return array(
+            'result' => 'ok',
+            'data' => $data
+        );
+    }
+    return array('result' => 'error');
+}
+
+echo json_encode(answer(router($_GET)));

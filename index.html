@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>стяжки лопаются</title>
+    <title>Title screen</title>
     <script src="public/js/main.js"></script>
     <link rel="icon" type="image" href="resources/favicon/xdd.png" />
     <link rel="stylesheet" href="public/css/style.css" />
@@ -14,6 +14,20 @@
       <input type="text" id="number" placeholder="введите число" />
       <input type="text" id="pow" placeholder="введите степень" />
     </div>
-    <button id="send">Ответ</button>
+
+    <div>
+      <button id="send">Ответ</button>
+    </div>
+
+    <form><!--Если планируется отправлять данные списка на сервер, то требуется поместить элемент <select> внутрь формы. Это также необходимо, когда к данным списка идет обращение через скрипты.-->
+      <select>
+        <option disabled>Выберите систему исчисления</option> 
+        <option selected value="decimal">Десятичная</option>
+        <option value="binary">Двоичная</option>
+        <option value="octal" >Восьмеричная</option>
+        <option value="hexadecimal">Шестнадцатиричная</option>
+        <option value="roman">Романские цифры</option>
+      </select>
+    </form>
   </body>
 </html>

@@ -1,23 +1,23 @@
 body {
-    background-color:cornflowerblue;
-    color: white;
-    position: relative;
-    max-width: 540px;
-    min-height: 100%;
-    margin: 0 auto;
-    font-family: 'Suisse';
-    box-sizing: border-box;
-    padding: 36px;
-  }
+  background-color: cornflowerblue;
+  color: white;
+  position: relative;
+  max-width: 540px;
+  min-height: 100%;
+  margin: 0 auto;
+  font-family: 'Suisse';
+  box-sizing: border-box;
+  padding-top: 30px;
+}
 
-#send{
-    width: 130px;
-    height: 40px;
-    padding-top: 10px;
-    box-sizing: border-box;
-    border: 1px solid rgb(0, 0, 0);
-    text-align: center;
-    font-size: 14px;
-    cursor: pointer;
-    transition: opacity 0.2s;
+#send {
+  width: 130px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 1px solid rgb(0, 0, 0);
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin: 10px;
 }
